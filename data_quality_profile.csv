@@ -1,0 +1,15 @@
+column,dtype,missing_count,missing_percent,unique_values_including_na,exact_duplicate_rows_in_dataset
+CustomerID,object,0,0.0,240,3
+Gender,object,5,2.06,4,3
+SeniorCitizen,int64,0,0.0,3,3
+Partner,object,0,0.0,2,3
+Dependents,object,0,0.0,2,3
+TenureMonths,int64,0,0.0,71,3
+PhoneService,object,0,0.0,2,3
+InternetService,object,0,0.0,4,3
+Contract,object,0,0.0,4,3
+PaperlessBilling,object,0,0.0,2,3
+PaymentMethod,object,0,0.0,5,3
+MonthlyCharges,float64,4,1.65,237,3
+TotalCharges,object,3,1.23,236,3
+Churn,object,0,0.0,2,3
