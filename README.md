@@ -21,3 +21,8 @@ Install Python 3 and run:
 **Google Drive:** Upload the ZIP or the `project_report.html` file, right-click it → Share → General access → choose “Anyone with the link” → Viewer → Copy link. If your college wants all code/data too, share the ZIP or upload the whole project folder and share the folder link.
 **GitHub:** Create a public repository and upload all project files; copy the repository URL.
 Only use a public link if your college permits it. Do not upload personal or confidential data.
+
+
+## Task 2: Interactive Dashboard
+
+Open `customer_churn_interactive_dashboard.html` in a web browser for the interactive dashboard. It includes filters for contract, tenure and payment method; churn and retention KPIs; monthly revenue-at-risk proxy; tenure and payment comparisons; and a segment summary. The data is synthetic and the dashboard is a standalone HTML deliverable.

@@ -1,61 +1,10 @@
-DATA QUALITY AND EXPLORATORY ANALYSIS — CUSTOMER CHURN
-==============================================================
-DATA NOTE: Synthetic practice dataset; not real company data.
-
-1. RAW DATA PROFILE
-Rows before cleaning: 243
-Columns: 14
-Exact duplicate rows detected: 3
-Per-column types, missing counts/percentages, and unique counts are in data_quality_profile.csv.
-
-2. IQR OUTLIER SCREENING (flags only; not automatically deleted)
-SeniorCitizen: lower fence=0.0, upper fence=0.0, flagged=43
-TenureMonths: lower fence=-43.0, upper fence=109.0, flagged=0
-MonthlyCharges: lower fence=-31.52, upper fence=168.24, flagged=0
-
-3. CLEANING DECISIONS / ASSUMPTIONS
-- Trim whitespace and treat blank strings as missing.
-- Standardize known category variants (case/spelling/spacing).
-- Convert numeric fields using safe numeric conversion.
-- Remove 3 exact duplicate row(s).
-- Treat SeniorCitizen values outside 0/1, negative tenure, and negative charges as invalid/missing.
-- Fill numeric missing values with median; categorical missing values with mode.
-- IQR outliers are reported but retained unless they violate explicit domain rules, since high values may be valid.
-- Rows after cleaning: 240; missing cells after cleaning: 0.
-Validation checks passed: no missing cells, no duplicate rows, valid binary SeniorCitizen, nonnegative tenure/charges, valid churn labels.
-
-4. SUMMARY STATISTICS
-       TenureMonths  MonthlyCharges  TotalCharges
-count        240.00          240.00         240.0
-mean          33.56           69.53       2329.67
-std           21.49           28.45       1869.36
-min            0.00           20.06           0.0
-25%           14.50           44.76        821.76
-50%           33.00           69.35       1799.35
-75%           52.00           93.32        3550.5
-max           72.00          119.88       8159.73
-
-5. CHURN PATTERNS
-Overall churn rate: 29.2%
-
-Churn rate by contract (%):
-Contract
+CUSTOMER CHURN DATA QUALITY & EXPLORATORY ANALYSIS\n==========================================================\n\nDataset note: This project uses a synthetic practice dataset generated for demonstration.\nRaw rows: 243\nColumns: 14\nExact duplicate rows removed: 3\nCleaning decisions:\n- Trimmed whitespace and converted blank-like strings to missing values.\n- Standardized known category spelling/case variants.\n- Converted numeric columns to numeric types.\n- Marked invalid binary, negative tenure, and negative charge values as missing.\n- Filled numeric missing values with median and categorical missing values with mode.\nRows after deduplication: 240\nMissing cells after cleaning: 0\n\nOverall churn rate: 29.2%\n\nChurn rate by contract type (%):\nContract
 Month-to-month    34.3
 One year          23.4
-Two year          20.8
-
-Tenure by churn:
-       count   mean  median  min  max
-Churn                                
-No       170  37.80    38.5    0   72
-Yes       70  23.26    18.0    0   71
-
-Monthly charges by churn:
-        mean  median    min     max
-Churn                              
-No     65.82   66.02  20.06  119.03
-Yes    78.55   76.54  28.67  119.88
-
-6. INTERPRETATION AND LIMITATIONS
-In this synthetic sample, churn is highest for month-to-month contracts. This is a descriptive pattern only.
-The data are synthetic and small; results are illustrative, not business-grade conclusions or causal evidence.
+Two year          20.8\n\nTenure summary by churn status:\n       count   mean  median
+Churn                      
+No       170  37.80    38.5
+Yes       70  23.26    18.0\n\nMonthly charges by churn status:\n        mean  median
+Churn               
+No     65.82   66.02
+Yes    78.55   76.54\n\nInterpretation note: This is a small synthetic dataset; patterns are illustrative, not business-grade conclusions.\n
